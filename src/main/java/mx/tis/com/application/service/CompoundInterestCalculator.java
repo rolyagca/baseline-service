@@ -10,13 +10,14 @@
 *
 * Nombre de archivo: CompoundInterestCalculator.java
 * Autor: rolaguil
-* Fecha de creación: 6 sep 2021
+* Fecha de creación: 8 sep 2021
 */
+
 package mx.tis.com.application.service;
 
-import java.util.List;
 import mx.tis.com.application.dto.InitialInvestmentDto;
 import mx.tis.com.application.dto.InvestmentYieldDto;
+import java.util.List;
 
 /**
  * The Interface CompoundInterestCalculator.
@@ -27,10 +28,10 @@ public interface CompoundInterestCalculator {
    * Creates the revenue grid.
    *
    * @param initialInvestmentDto the initial investment dto
-   * @return the array list
+   * @return the list
    */
   List<InvestmentYieldDto> createRevenueGrid(InitialInvestmentDto initialInvestmentDto);
-  
+
   /**
    * Validate input.
    *

@@ -10,14 +10,20 @@
 *
 * Nombre de archivo: InitialInvestmentDto.java
 * Autor: rolaguil
-* Fecha de creación: 6 sep 2021
+* Fecha de creación: 8 sep 2021
 */
+
 
 package mx.tis.com.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
+
+/**
+ * The Class InitialInvestmentDto.
+ */
 
 
 @Getter
@@ -28,6 +34,46 @@ import lombok.Setter;
  *
  * @param initialInvestment the initial investment
  * @param yearlyInput the yearly input
+ * @param investmentYield the investment yield
+ * @param investmentYears the investment years
+ */
+
+/**
+ * Instantiates a new initial investment dto.
+ *
+ * @param initialInvestment the initial investment
+ * @param yearlyInput the yearly input
+ * @param yearlyInputIncrement the yearly input increment
+ * @param investmentYield the investment yield
+ * @param investmentYears the investment years
+ */
+
+/**
+ * Instantiates a new initial investment dto.
+ *
+ * @param initialInvestment the initial investment
+ * @param yearlyInput the yearly input
+ * @param yearlyInputIncrement the yearly input increment
+ * @param investmentYield the investment yield
+ * @param investmentYears the investment years
+ */
+
+/**
+ * Instantiates a new initial investment dto.
+ *
+ * @param initialInvestment the initial investment
+ * @param yearlyInput the yearly input
+ * @param yearlyInputIncrement the yearly input increment
+ * @param investmentYield the investment yield
+ * @param investmentYears the investment years
+ */
+
+/**
+ * Instantiates a new initial investment dto.
+ *
+ * @param initialInvestment the initial investment
+ * @param yearlyInput the yearly input
+ * @param yearlyInputIncrement the yearly input increment
  * @param investmentYield the investment yield
  * @param investmentYears the investment years
  */

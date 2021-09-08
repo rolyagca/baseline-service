@@ -1,25 +1,30 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under the terms of the
- * GNU General Public License as published by the Free Software Foundation, version 3.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
- * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- *
- * Nombre de archivo: CompoundInterestCalculatorImpl.java Autor: rolaguil Fecha de creación: 7 sep
- * 2021
- */
+/* 
+* This program is free software: you can redistribute it and/or modify  
+* it under the terms of the GNU General Public License as published by  
+* the Free Software Foundation, version 3.
+*
+* This program is distributed in the hope that it will be useful, but 
+* WITHOUT ANY WARRANTY; without even the implied warranty of 
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+* General Public License for more details.
+*
+* Nombre de archivo: CompoundInterestCalculatorImpl.java
+* Autor: rolaguil
+* Fecha de creación: 8 sep 2021
+*/
+
 
 package mx.tis.com.application.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import mx.tis.com.application.service.CompoundInterestCalculator;
+import mx.tis.com.application.dto.InitialInvestmentDto;
+import mx.tis.com.application.dto.InvestmentYieldDto;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import mx.tis.com.application.dto.InitialInvestmentDto;
-import mx.tis.com.application.dto.InvestmentYieldDto;
-import mx.tis.com.application.service.CompoundInterestCalculator;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -67,13 +72,13 @@ public class CompoundInterestCalculatorImpl implements CompoundInterestCalculato
                     * (1 + (initialInvestmentDto.getInvestmentYield().doubleValue() / 100d))))
                 * (initialInvestmentDto.getInvestmentYield() / 100f),
 
-                (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getFinalBalance())
+            (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getFinalBalance())
                 + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput()
-                * (1 + (initialInvestmentDto.getYearlyInputIncrement().doubleValue() / 100.00)))
+                    * (1 + (initialInvestmentDto.getYearlyInputIncrement().doubleValue() / 100.00)))
                 + ((investmentYieldDtos.get(investmentYieldDtos.size() - 1).getFinalBalance()
-                + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput()
-                    * (1 + (initialInvestmentDto.getInvestmentYield().doubleValue() / 100d))))
-                * (initialInvestmentDto.getInvestmentYield() / 100f)));
+                    + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput()
+                        * (1 + (initialInvestmentDto.getInvestmentYield().doubleValue() / 100d))))
+                    * (initialInvestmentDto.getInvestmentYield() / 100f)));
       }
     }).forEachOrdered(investmentYieldDtos::add);
     return investmentYieldDtos;
