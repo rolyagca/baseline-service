@@ -14,7 +14,7 @@
 */
 package mx.tis.com.application.service;
 
-import java.util.ArrayList;
+import java.util.List;
 import mx.tis.com.application.dto.InitialInvestmentDto;
 import mx.tis.com.application.dto.InvestmentYieldDto;
 
@@ -29,7 +29,7 @@ public interface CompoundInterestCalculator {
    * @param initialInvestmentDto the initial investment dto
    * @return the array list
    */
-  ArrayList<InvestmentYieldDto> createRevenueGrid(InitialInvestmentDto initialInvestmentDto);
+  List<InvestmentYieldDto> createRevenueGrid(InitialInvestmentDto initialInvestmentDto);
   
   /**
    * Validate input.
