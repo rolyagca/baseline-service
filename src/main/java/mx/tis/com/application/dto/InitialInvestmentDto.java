@@ -10,14 +10,20 @@
 *
 * Nombre de archivo: InitialInvestmentDto.java
 * Autor: rolaguil
-* Fecha de creación: 6 sep 2021
+* Fecha de creación: 8 sep 2021
 */
+
+
 package mx.tis.com.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+
+/**
+ * The Class InitialInvestmentDto.
+ */
 
 
 @Getter
@@ -31,18 +37,61 @@ import lombok.Setter;
  * @param investmentYield the investment yield
  * @param investmentYears the investment years
  */
+
+/**
+ * Instantiates a new initial investment dto.
+ *
+ * @param initialInvestment the initial investment
+ * @param yearlyInput the yearly input
+ * @param yearlyInputIncrement the yearly input increment
+ * @param investmentYield the investment yield
+ * @param investmentYears the investment years
+ */
+
+/**
+ * Instantiates a new initial investment dto.
+ *
+ * @param initialInvestment the initial investment
+ * @param yearlyInput the yearly input
+ * @param yearlyInputIncrement the yearly input increment
+ * @param investmentYield the investment yield
+ * @param investmentYears the investment years
+ */
+
+/**
+ * Instantiates a new initial investment dto.
+ *
+ * @param initialInvestment the initial investment
+ * @param yearlyInput the yearly input
+ * @param yearlyInputIncrement the yearly input increment
+ * @param investmentYield the investment yield
+ * @param investmentYears the investment years
+ */
+
+/**
+ * Instantiates a new initial investment dto.
+ *
+ * @param initialInvestment the initial investment
+ * @param yearlyInput the yearly input
+ * @param yearlyInputIncrement the yearly input increment
+ * @param investmentYield the investment yield
+ * @param investmentYears the investment years
+ */
 @AllArgsConstructor
 public class InitialInvestmentDto {
-  
+
   /** The initial investment. */
   private Double initialInvestment;
-  
+
   /** The yearly input. */
   private Double yearlyInput;
-  
+
+  /** The yearly input increment. */
+  private Integer yearlyInputIncrement;
+
   /** The investment yield. */
   private Float investmentYield;
-  
+
   /** The investment years. */
   private Integer investmentYears;
 }
