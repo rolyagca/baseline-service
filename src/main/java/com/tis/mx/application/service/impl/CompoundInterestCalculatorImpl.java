@@ -14,15 +14,15 @@
 */
 
 
-package mx.tis.com.application.service.impl;
+package com.tis.mx.application.service.impl;
 
 
-import mx.tis.com.application.service.CompoundInterestCalculator;
-import mx.tis.com.application.dto.InitialInvestmentDto;
-import mx.tis.com.application.dto.InvestmentYieldDto;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import com.tis.mx.application.dto.InitialInvestmentDto;
+import com.tis.mx.application.dto.InvestmentYieldDto;
+import com.tis.mx.application.service.CompoundInterestCalculator;
 import java.util.ArrayList;
 import java.util.List;
 
