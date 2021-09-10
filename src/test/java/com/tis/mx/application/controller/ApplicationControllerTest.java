@@ -16,13 +16,13 @@
 
 package com.tis.mx.application.controller;
 
+import static org.junit.Assert.assertEquals;
 import com.tis.mx.application.dto.InitialInvestmentDto;
 import com.tis.mx.application.dto.InvestmentYieldDto;
 import com.tis.mx.application.service.CompoundInterestCalculator;
 import com.tis.mx.application.service.impl.CompoundInterestCalculatorImpl;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 import java.util.List;
 
 /**
@@ -73,5 +73,11 @@ public class ApplicationControllerTest {
     assertEquals(Double.valueOf(3000.00), firstYear.getYearlyInput());
     assertEquals(Double.valueOf(1680.00), firstYear.getInvestmentYield());
     assertEquals(Double.valueOf(9680.00), firstYear.getFinalBalance());
+    
+    InvestmentYieldDto fiftYear = tableYield.get(4);
+    assertEquals(Double.valueOf(30_738.00), fiftYear.getInitialInvestment());
+    assertEquals(Double.valueOf(3_122.00), fiftYear.getYearlyInput());
+    assertEquals(Double.valueOf(7_111.00), fiftYear.getInvestmentYield());
+    assertEquals(Double.valueOf(40_970.00), fiftYear.getFinalBalance());
   }
 }

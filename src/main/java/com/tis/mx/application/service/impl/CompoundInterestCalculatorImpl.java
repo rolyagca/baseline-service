@@ -13,7 +13,6 @@
 * Fecha de creación: 10 sep 2021
 */
 
-
 package com.tis.mx.application.service.impl;
 
 
@@ -79,9 +78,9 @@ public class CompoundInterestCalculatorImpl implements CompoundInterestCalculato
                 + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput()
                     * (1 + (initialInvestmentDto.getYearlyInputIncrement().doubleValue() / 100.00)))
                 + ((investmentYieldDtos.get(investmentYieldDtos.size() - 1).getFinalBalance()
-                    + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput()
-                        * (1 + (initialInvestmentDto.getInvestmentYield().doubleValue() / 100d))))
-                    * (initialInvestmentDto.getInvestmentYield() / 100f)));
+                    + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput() * (1
+                        + (initialInvestmentDto.getYearlyInputIncrement().doubleValue() / 100.00))))
+                    * (initialInvestmentDto.getInvestmentYield().doubleValue() / 100.00)));
       }
     }).forEachOrdered(investmentYieldDtos::add);
     return investmentYieldDtos;
