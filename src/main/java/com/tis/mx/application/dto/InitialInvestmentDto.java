@@ -10,14 +10,15 @@
 *
 * Nombre de archivo: InitialInvestmentDto.java
 * Autor: rolaguil
-* Fecha de creación: 8 sep 2021
+* Fecha de creación: 9 sep 2021
 */
 
 
-package mx.tis.com.application.dto;
+package com.tis.mx.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -78,6 +79,11 @@ import lombok.Setter;
  * @param investmentYears the investment years
  */
 @AllArgsConstructor
+
+/**
+ * Instantiates a new initial investment dto.
+ */
+@NoArgsConstructor
 public class InitialInvestmentDto {
 
   /** The initial investment. */
