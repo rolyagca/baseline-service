@@ -8,28 +8,29 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: CalculatorInputException.java
+* Nombre de archivo: EjemploController.java
 * Autor: rolaguil
 * Fecha de creación: 10 sep 2021
 */
 
 package com.tis.mx.application.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
- * The Class CalculatorInputException.
+ * The Class EjemploController.
  */
-public class CalculatorInputException extends RuntimeException {
-
-
-  /** The Constant serialVersionUID. */
-  private static final long serialVersionUID = -6506558049330575989L;
+@RestController
+public class EjemploController {
 
   /**
-   * Instantiates a new calculator input exception.
+   * Gets the message.
    *
-   * @param message the message
+   * @return the message
    */
-  public CalculatorInputException(String message) {
-    super(message);
+  @GetMapping(value = "/mensaje")
+  public String getMessage() {
+    return "Hola Mundo!!";
   }
 }

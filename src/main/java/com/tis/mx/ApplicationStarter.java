@@ -8,28 +8,31 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: CalculatorInputException.java
+* Nombre de archivo: ApplicationStarter.java
 * Autor: rolaguil
 * Fecha de creación: 10 sep 2021
 */
 
-package com.tis.mx.application.controller;
+package com.tis.mx;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * The Class CalculatorInputException.
+ * The Class ApplicationStarter.
  */
-public class CalculatorInputException extends RuntimeException {
-
-
-  /** The Constant serialVersionUID. */
-  private static final long serialVersionUID = -6506558049330575989L;
-
+@SpringBootApplication
+public class ApplicationStarter {
+  
   /**
-   * Instantiates a new calculator input exception.
+   * The main method.
    *
-   * @param message the message
+   * @param args the arguments
    */
-  public CalculatorInputException(String message) {
-    super(message);
+  public static void main(String[] args) {
+    
+    SpringApplication.run(ApplicationStarter.class, args);
+    
   }
+
 }

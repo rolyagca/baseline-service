@@ -10,25 +10,38 @@
 *
 * Nombre de archivo: ApplicationControllerTest.java
 * Autor: rolaguil
-* Fecha de creación: 9 sep 2021
+* Fecha de creación: 10 sep 2021
 */
+
 
 package com.tis.mx.application.controller;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Before;
-import org.junit.Test;
 import com.tis.mx.application.dto.InitialInvestmentDto;
 import com.tis.mx.application.dto.InvestmentYieldDto;
 import com.tis.mx.application.service.CompoundInterestCalculator;
 import com.tis.mx.application.service.impl.CompoundInterestCalculatorImpl;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 import java.util.List;
 
+/**
+ * The Class ApplicationControllerTest.
+ */
 public class ApplicationControllerTest {
+
+  /** The controller. */
   private ApplicationController controller;
+
+  /** The initial investment. */
   private InitialInvestmentDto initialInvestment;
+
+  /** The calculator. */
   private CompoundInterestCalculator calculator;
 
+  /**
+   * Creates the values before test.
+   */
   @Before
   public void createValuesBeforeTest() {
     // Crear una calculadora
@@ -50,14 +63,15 @@ public class ApplicationControllerTest {
    */
   @Test
   public void shouldGenerateTableYield() {
-    List<InvestmentYieldDto> tableYield = controller.createTableYield(initialInvestment);
+    List<InvestmentYieldDto> tableYield =
+        controller.createTableYield("application/json", initialInvestment);
 
     assertEquals(5, tableYield.size());
 
     InvestmentYieldDto firstYear = tableYield.get(0);
     assertEquals(Double.valueOf(5000.00), firstYear.getInitialInvestment());
     assertEquals(Double.valueOf(3000.00), firstYear.getYearlyInput());
-    assertEquals(Double.valueOf(1680.00), firstYear.getInvestmentYear());
+    assertEquals(Double.valueOf(1680.00), firstYear.getInvestmentYield());
     assertEquals(Double.valueOf(9680.00), firstYear.getFinalBalance());
   }
 }

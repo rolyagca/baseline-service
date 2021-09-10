@@ -10,19 +10,21 @@
 *
 * Nombre de archivo: CompoundInterestCalculatorImpl.java
 * Autor: rolaguil
-* Fecha de creación: 8 sep 2021
+* Fecha de creación: 10 sep 2021
 */
 
 
 package com.tis.mx.application.service.impl;
 
 
+
+import com.tis.mx.application.service.CompoundInterestCalculator;
+import com.tis.mx.application.dto.InitialInvestmentDto;
+import com.tis.mx.application.dto.InvestmentYieldDto;
+import org.springframework.stereotype.Service;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import com.tis.mx.application.dto.InitialInvestmentDto;
-import com.tis.mx.application.dto.InvestmentYieldDto;
-import com.tis.mx.application.service.CompoundInterestCalculator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,7 @@ import java.util.List;
 /**
  * The Class CompoundInterestCalculatorImpl.
  */
+@Service
 public class CompoundInterestCalculatorImpl implements CompoundInterestCalculator {
 
   /**
@@ -68,9 +71,9 @@ public class CompoundInterestCalculatorImpl implements CompoundInterestCalculato
                 * (1 + (initialInvestmentDto.getYearlyInputIncrement().doubleValue() / 100.00)),
 
             (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getFinalBalance()
-                + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput()
-                    * (1 + (initialInvestmentDto.getInvestmentYield().doubleValue() / 100d))))
-                * (initialInvestmentDto.getInvestmentYield() / 100f),
+                + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput() * (1
+                    + (initialInvestmentDto.getYearlyInputIncrement().doubleValue() / 100.00))))
+                * (initialInvestmentDto.getInvestmentYield().doubleValue() / 100.00),
 
             (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getFinalBalance())
                 + (investmentYieldDtos.get(investmentYieldDtos.size() - 1).getYearlyInput()

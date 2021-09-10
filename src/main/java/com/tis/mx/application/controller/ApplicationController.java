@@ -10,7 +10,7 @@
 *
 * Nombre de archivo: ApplicationController.java
 * Autor: rolaguil
-* Fecha de creación: 9 sep 2021
+* Fecha de creación: 10 sep 2021
 */
 
 
@@ -20,11 +20,16 @@ package com.tis.mx.application.controller;
 import com.tis.mx.application.dto.InitialInvestmentDto;
 import com.tis.mx.application.dto.InvestmentYieldDto;
 import com.tis.mx.application.service.CompoundInterestCalculator;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
  * The Class ApplicationController.
  */
+@RestController
 public class ApplicationController {
 
   /** The calculator. */
@@ -42,10 +47,14 @@ public class ApplicationController {
   /**
    * Creates the table yield.
    *
+   * @param contentType the content type
    * @param initialInvestmentDto the initial investment dto
    * @return the list
    */
-  public List<InvestmentYieldDto> createTableYield(InitialInvestmentDto initialInvestmentDto) {
+  @PostMapping(value = "/api/v1/investors/calculators/ci")
+  public List<InvestmentYieldDto> createTableYield(
+      @RequestHeader(value = "Content-Type", required = false) String contentType, 
+      @RequestBody InitialInvestmentDto initialInvestmentDto) {
     if (calculator.validateInput(initialInvestmentDto)) {
       return calculator.createRevenueGrid(initialInvestmentDto);
     }
