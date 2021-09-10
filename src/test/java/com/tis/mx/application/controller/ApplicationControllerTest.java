@@ -75,9 +75,9 @@ public class ApplicationControllerTest {
     assertEquals(Double.valueOf(9680.00), firstYear.getFinalBalance());
     
     InvestmentYieldDto fiftYear = tableYield.get(4);
-    assertEquals(Double.valueOf(30_738.00), fiftYear.getInitialInvestment());
-    assertEquals(Double.valueOf(3_122.00), fiftYear.getYearlyInput());
-    assertEquals(Double.valueOf(7_111.00), fiftYear.getInvestmentYield());
-    assertEquals(Double.valueOf(40_970.00), fiftYear.getFinalBalance());
+    assertEquals(Double.valueOf(30737.118170000005), fiftYear.getInitialInvestment());
+    assertEquals(Double.valueOf(3121.8120300000005), fiftYear.getYearlyInput());
+    assertEquals(Double.valueOf(7110.375342), fiftYear.getInvestmentYield());
+    assertEquals(Double.valueOf(40969.305542), fiftYear.getFinalBalance());
   }
 }
