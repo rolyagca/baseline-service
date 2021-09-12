@@ -10,10 +10,8 @@
 *
 * Nombre de archivo: ApplicationController.java
 * Autor: rolaguil
-* Fecha de creación: 10 sep 2021
+* Fecha de creación: 10 sep. 2021
 */
-
-
 
 package com.tis.mx.application.controller;
 
@@ -47,19 +45,18 @@ public class ApplicationController {
   /**
    * Creates the table yield.
    *
-   * @param contentType the content type
    * @param initialInvestmentDto the initial investment dto
    * @return the list
    */
   @PostMapping(value = "/api/v1/investors/calculators/ci")
   public List<InvestmentYieldDto> createTableYield(
-      @RequestHeader(value = "Content-Type", required = false) String contentType, 
+      @RequestHeader(value = "Content-Type", required = false) String contentType,
       @RequestBody InitialInvestmentDto initialInvestmentDto) {
     if (calculator.validateInput(initialInvestmentDto)) {
       return calculator.createRevenueGrid(initialInvestmentDto);
     }
 
-    throw new RuntimeException("One or more values are invalid");
+    throw new CalculatorInputException("One or more values are invalid");
   }
 
 }

@@ -16,7 +16,6 @@
 package com.tis.mx.infrastructure.exception;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.Setter;
 
 /**
@@ -25,13 +24,6 @@ import lombok.Setter;
  * @param moreInfo the new more info
  */
 @Setter
-
-/**
- * Gets the more info.
- *
- * @return the more info
- */
-@Getter
 
 /**
  * Instantiates a new error response.

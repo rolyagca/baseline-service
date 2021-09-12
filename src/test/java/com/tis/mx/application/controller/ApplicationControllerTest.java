@@ -1,18 +1,13 @@
-/* 
-* This program is free software: you can redistribute it and/or modify  
-* it under the terms of the GNU General Public License as published by  
-* the Free Software Foundation, version 3.
-*
-* This program is distributed in the hope that it will be useful, but 
-* WITHOUT ANY WARRANTY; without even the implied warranty of 
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
-* General Public License for more details.
-*
-* Nombre de archivo: ApplicationControllerTest.java
-* Autor: rolaguil
-* Fecha de creación: 10 sep 2021
-*/
-
+/*
+ * This program is free software: you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License as published by the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * Nombre de archivo: ApplicationControllerTest.java Autor: rolaguil Fecha de creación: 10 sep. 2021
+ */
 
 package com.tis.mx.application.controller;
 
@@ -55,7 +50,7 @@ public class ApplicationControllerTest {
     this.initialInvestment.setYearlyInput(Double.valueOf(3000.00));
     this.initialInvestment.setYearlyInputIncrement(Integer.valueOf(1));
     this.initialInvestment.setInvestmentYears(5);
-    this.initialInvestment.setInvestmentYield(Float.valueOf(21f));
+    this.initialInvestment.setInvestmentYield(Float.valueOf(21));
   }
 
   /**
@@ -73,11 +68,25 @@ public class ApplicationControllerTest {
     assertEquals(Double.valueOf(3000.00), firstYear.getYearlyInput());
     assertEquals(Double.valueOf(1680.00), firstYear.getInvestmentYield());
     assertEquals(Double.valueOf(9680.00), firstYear.getFinalBalance());
-    
+
     InvestmentYieldDto fiftYear = tableYield.get(4);
     assertEquals(Double.valueOf(30737.118170000005), fiftYear.getInitialInvestment());
     assertEquals(Double.valueOf(3121.8120300000005), fiftYear.getYearlyInput());
     assertEquals(Double.valueOf(7110.375342), fiftYear.getInvestmentYield());
     assertEquals(Double.valueOf(40969.305542), fiftYear.getFinalBalance());
+  }
+
+  /**
+   * Should throw validation exception.
+   */
+  @Test
+  public void shouldThrowValidationException() {
+    InitialInvestmentDto initialBad = initialInvestment;
+    initialBad.setInitialInvestment(0.00);
+    try {
+      controller.createTableYield("application/json", initialBad);
+    } catch (Exception ex) {
+      assertEquals("One or more values are invalid", ex.getMessage());
+    }
   }
 }
