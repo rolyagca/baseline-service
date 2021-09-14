@@ -1,2 +1,10 @@
 server:
    port: 8080
+
+spring:
+  application:
+    name: baseline-service-RAC
+  cloud:
+    config:
+      uri: http://localhost:8888
+
