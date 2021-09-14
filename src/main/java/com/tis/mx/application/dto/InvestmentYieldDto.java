@@ -10,7 +10,7 @@
 *
 * Nombre de archivo: InvestmentYieldDto.java
 * Autor: rolaguil
-* Fecha de creación: 8 sep 2021
+* Fecha de creación: 10 sep. 2021
 */
 
 package com.tis.mx.application.dto;
@@ -18,55 +18,14 @@ package com.tis.mx.application.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-
+/**
+ * Gets the final balance.
+ *
+ * @return the final balance
+ */
 @Getter
-@Setter
 
-/**
- * To string.
- *
- * @return the java.lang. string
- */
-
-/**
- * To string.
- *
- * @return the java.lang. string
- */
-@ToString
-
-/**
- * Instantiates a new investment yield dto.
- *
- * @param investmentYear the investment year
- * @param initialInvestment the initial investment
- * @param yearlyInput the year input
- * @param investmentYield the investment yield
- * @param finalBalance the final balance
- */
-
-/**
- * Instantiates a new investment yield dto.
- *
- * @param investmentYear the investment year
- * @param initialInvestment the initial investment
- * @param yearlyInput the yearly input
- * @param investmentYield the investment yield
- * @param finalBalance the final balance
- */
-
-/**
- * Instantiates a new investment yield dto.
- *
- * @param investmentYear the investment year
- * @param initialInvestment the initial investment
- * @param yearlyInput the yearly input
- * @param investmentYield the investment yield
- * @param finalBalance the final balance
- */
 
 /**
  * Instantiates a new investment yield dto.
@@ -79,13 +38,6 @@ import lombok.ToString;
  */
 @AllArgsConstructor
 
-/**
- * Instantiates a new investment yield dto.
- */
-
-/**
- * Instantiates a new investment yield dto.
- */
 
 /**
  * Instantiates a new investment yield dto.

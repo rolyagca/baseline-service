@@ -16,9 +16,8 @@
 
 package com.tis.mx.application.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
 
@@ -68,17 +67,6 @@ import lombok.Setter;
  * @param investmentYield the investment yield
  * @param investmentYears the investment years
  */
-
-/**
- * Instantiates a new initial investment dto.
- *
- * @param initialInvestment the initial investment
- * @param yearlyInput the yearly input
- * @param yearlyInputIncrement the yearly input increment
- * @param investmentYield the investment yield
- * @param investmentYears the investment years
- */
-@AllArgsConstructor
 
 /**
  * Instantiates a new initial investment dto.
