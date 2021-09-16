@@ -4,7 +4,32 @@ server:
 spring:
   application:
     name: baseline-service-RAC
-  cloud:
-    config:
-      uri: http://localhost:8888
+     
+      
+security:
+  basic:
+    enabled: false 
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 35
+      maximumSize: 35
+    command:
+      createRevenueGrid:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 1500
+            semphore:
+              maxConcurrentRequests: 500
+        circuitBreaker:
+          sleepWindowInMilliseconds: 5000                
 

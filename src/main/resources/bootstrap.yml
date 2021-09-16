@@ -1,0 +1,7 @@
+server:
+  port: 8080
+  
+spring:  application:    name: baseline-service-RAC
+  cloud:    config:      uri: http://ec2-3-144-104-148.us-east-2.compute.amazonaws.com:8888
+      
+    
