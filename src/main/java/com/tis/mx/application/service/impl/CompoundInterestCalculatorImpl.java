@@ -1,18 +1,19 @@
-/* 
-* This program is free software: you can redistribute it and/or modify  
-* it under the terms of the GNU General Public License as published by  
-* the Free Software Foundation, version 3.
+/*
+* All rights reserved by Capgemini. Copyright © 2020
 *
-* This program is distributed in the hope that it will be useful, but 
-* WITHOUT ANY WARRANTY; without even the implied warranty of 
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
-* General Public License for more details.
+* The Company is not bound by any obligation of result regarding the availability
+* this source code. The Company reserves the right 
+* (i)  to modify, without any prior notice, the features of the code and/or 
+* (ii) to suspend, interrupt or limit the access to all or part of the code 
+*      without any prior notice, particularly for maintenance purposes.
+* This source is protected by intellectual property rights including but not limited 
+* to trademarks, copyright, designs, sui generis right of the database producer, etc. 
+* and is the exclusive property of the Company.
 *
 * Nombre de archivo: CompoundInterestCalculatorImpl.java
 * Autor: rolaguil
-* Fecha de creación: 10 sep. 2021
+* Fecha de creación: 15 sep. 2021
 */
-
 
 package com.tis.mx.application.service.impl;
 
@@ -21,6 +22,7 @@ package com.tis.mx.application.service.impl;
 import com.tis.mx.application.service.CompoundInterestCalculator;
 import com.tis.mx.application.dto.InitialInvestmentDto;
 import com.tis.mx.application.dto.InvestmentYieldDto;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.stereotype.Service;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -42,6 +44,7 @@ public class CompoundInterestCalculatorImpl implements CompoundInterestCalculato
    * @return the list
    */
   @Override
+  @HystrixCommand(commandKey = "createRevenueGrid", fallbackMethod = "fallBackRevenueGrid")
   public List<InvestmentYieldDto> createRevenueGrid(InitialInvestmentDto initialInvestmentDto) {
     List<InvestmentYieldDto> investmentYieldDtos = new ArrayList<>();
     List<InvestmentYieldDto> aux = Stream.generate(InvestmentYieldDto::new)
@@ -94,6 +97,16 @@ public class CompoundInterestCalculatorImpl implements CompoundInterestCalculato
       }
     }).forEachOrdered(investmentYieldDtos::add);
     return investmentYieldDtos;
+  }
+
+  /**
+   * Fall back revenue grid.
+   *
+   * @param initialInvestmentDto the initial investment dto
+   * @return the list
+   */
+  public List<InvestmentYieldDto> fallBackRevenueGrid(InitialInvestmentDto initialInvestmentDto) {
+    return null;
   }
 
   /**

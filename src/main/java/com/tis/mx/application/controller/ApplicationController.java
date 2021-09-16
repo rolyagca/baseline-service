@@ -18,6 +18,7 @@ package com.tis.mx.application.controller;
 import com.tis.mx.application.dto.InitialInvestmentDto;
 import com.tis.mx.application.dto.InvestmentYieldDto;
 import com.tis.mx.application.service.CompoundInterestCalculator;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -28,6 +29,7 @@ import java.util.List;
  * The Class ApplicationController.
  */
 @RestController
+@CrossOrigin
 public class ApplicationController {
 
   /** The calculator. */
